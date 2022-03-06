@@ -62,9 +62,9 @@ function show_force_bind(){
     });
 }
 
-if (bind_user == 'True') {
-    show_force_bind();
-}
+//if (bind_user == 'True') {
+//    show_force_bind();
+//}
 
 
 $("select[name='network-io'],select[name='disk-io']").change(function(){

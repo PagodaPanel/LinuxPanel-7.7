@@ -72,11 +72,11 @@
     <div class="container-fluid" style="padding-bottom: 66px;">
 		<div class="index-pos-box bgw mtb15">
             <div class="position f12 c6 pull-left" style="background:none;padding-left:15px">
-                <span class="bind-user c4">
+                <span class="bind-user c4" style="display:none">
                     <a href="javascript:bt.pub.bind_btname();" class="btlink">宝塔账户</a>
                 </span>
                 {% if data['pd'].find('免费版') != -1 %}
-                    <span id="bt-fuli" class="bt-dashi">
+                    <span id="bt-fuli" class="bt-dashi" style="display:none">
                         <a class="btlink ml5" href="https://www.bt.cn/invite" target="_blank">邀请奖励</a>
                     </span>
                 {% endif %}
