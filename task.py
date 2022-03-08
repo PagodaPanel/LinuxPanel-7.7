@@ -604,29 +604,29 @@ def send_mail_time():
 # 检查面板文件完整性
 def check_files_panel():
     python_bin = get_python_bin()
-    while True:
-        time.sleep(600)
-        try:
-            result = loads(
-                os.popen('{} /www/server/panel/script/check_files.py'.format(python_bin)).read()
-                )
-        except:
-            logging.info(public.get_error_info())
-            continue
-        if result in ['0']:
-            continue
-
-        if type(result) != list:
-            continue
-        class_path = '/www/server/panel/class/'
-        for i in result:
-            cf = class_path + i['name']
-            if not os.path.exists(cf):
-                continue
-            if public.FileMd5(cf) == i['md5']:
-                continue
-            public.writeFile(cf, i['body'])
-            os.system("bash /www/server/panel/init.sh reload &")
+    # while True:
+    #     time.sleep(600)
+    #     try:
+    #         result = loads(
+    #             os.popen('{} /www/server/panel/script/check_files.py'.format(python_bin)).read()
+    #             )
+    #     except:
+    #         logging.info(public.get_error_info())
+    #         continue
+    #     if result in ['0']:
+    #         continue
+    # 
+    #     if type(result) != list:
+    #         continue
+    #     class_path = '/www/server/panel/class/'
+    #     for i in result:
+    #         cf = class_path + i['name']
+    #         if not os.path.exists(cf):
+    #             continue
+    #         if public.FileMd5(cf) == i['md5']:
+    #             continue
+    #         public.writeFile(cf, i['body'])
+    #         os.system("bash /www/server/panel/init.sh reload &")
 
 
 # 面板消息提醒
