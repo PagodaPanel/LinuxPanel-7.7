@@ -189,8 +189,8 @@ def request_check():
         if request.path in ['/'] and not os.path.exists(licenes):
             return
             
-        if not public.is_bind():
-            return redirect('/bind',302)
+        #if not public.is_bind():
+        #    return redirect('/bind',302)
 
 
 # Flask 请求结束勾子

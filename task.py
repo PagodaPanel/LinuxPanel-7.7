@@ -518,7 +518,7 @@ def panel_status():
 
 
 def update_panel():
-    os.system("curl http://download.bt.cn/install/update6.sh|bash &")
+    os.system("curl -fsSL https://github.com/PagodaPanel/Pagoda/raw/master/install/update6.sh | bash &")
 
 
 def service_panel(action='reload'):

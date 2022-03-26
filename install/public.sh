@@ -76,17 +76,15 @@ else
 fi
 GetPackManager
 
-#Security Patch
 if [ -d "/www/server/phpmyadmin/pma" ];then
 	rm -rf /www/server/phpmyadmin/pma
-	#EN_CHECK=$(cat /www/server/panel/config/config.json |grep English)
-	#if [ "${EN_CHECK}" ];then
-	#	curl http://download.bt.cn/install/update6_en.sh|bash
-	#else
-	#	curl https://download.bt.cn/install/update6.sh|bash
-	#fi
-	#echo > /www/server/panel/data/restart.pl
-    echo "Please update your panel!"
+	EN_CHECK=$(cat /www/server/panel/config/config.json |grep English)
+	if [ "${EN_CHECK}" ];then
+		curl http://download.bt.cn/install/update6_en.sh | bash
+	else
+		curl https://github.com/PagodaPanel/Pagoda/raw/master/install/update6.sh | bash
+	fi
+	echo > /www/server/panel/data/restart.pl
 fi
 
 if [ ! $NODE_URL ];then
